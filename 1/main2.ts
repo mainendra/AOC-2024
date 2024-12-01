@@ -12,13 +12,15 @@ input.split('\n').forEach(line => {
     col2.push(+result[1]);
 });
 
-// Sort arrays
-col1.sort();
-col2.sort();
+const resultMap: Map<number, number> = new Map();
 
-let totalDistance = 0;
-for(let i = 0; i < col1.length; i++) {
-    totalDistance += Math.abs(col1[i] - col2[i]);
+for(let i = 0; i < col2.length; i++) {
+    resultMap.set(col2[i], (resultMap.get(col2[i]) ?? 0) + 1);
 }
 
-console.log(`Distance: ${totalDistance}`);
+let result: number = 0;
+for(let i = 0; i < col1.length; i++) {
+    result += (col1[i] * (resultMap.get(col1[i]) ?? 0));
+}
+
+console.log(result);
