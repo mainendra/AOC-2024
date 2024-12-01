@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "input": "deno run --allow-read --allow-env --allow-net --allow-write input.ts",
     "1-1": "deno run 1/main1.ts",
     "1-2": "deno run 1/main2.ts"
   },
