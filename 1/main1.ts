@@ -1,11 +1,9 @@
-const input = Deno.readTextFileSync("input.txt");
+const input = Deno.readTextFileSync("input.txt").trim();
 
 const col1: number[] = [];
 const col2: number[] = [];
 
 input.split('\n').forEach(line => {
-    if (!line) return;
-
     const result = line.split(/\s+/);
 
     col1.push(+result[0]);
