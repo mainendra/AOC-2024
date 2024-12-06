@@ -10,7 +10,9 @@
     "4-1": "deno run --allow-read 4/main1.ts",
     "4-2": "deno run --allow-read 4/main2.ts",
     "5-1": "deno run --allow-read 5/main1.ts",
-    "5-2": "deno run --allow-read 5/main2.ts"
+    "5-2": "deno run --allow-read 5/main2.ts",
+    "6-1": "deno run --allow-read 6/main1.ts",
+    "6-2": "deno run --allow-read 6/main2.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"
