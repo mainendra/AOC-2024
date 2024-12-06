@@ -20,6 +20,8 @@ const totalRows = matrix.length;
 const totalColms = matrix[0].length;
 
 const dir = [-1, 0]; // start dir up
+const positions = new Set<string>();
+positions.add(`${guardPos[0]}-${guardPos[1]}1]}`);
 
 while((guardPos[0] > 0 && guardPos[0] < totalRows - 1) && (guardPos[1] > 0 && guardPos[1] < totalColms - 1)) {
     const tmpRow = guardPos[0] + dir[0];
@@ -28,17 +30,9 @@ while((guardPos[0] > 0 && guardPos[0] < totalRows - 1) && (guardPos[1] > 0 && gu
         [dir[0],dir[1]] = [dir[1], -1 * dir[0]]; // rotate 90 deg right
     } else {
         guardPos = [tmpRow, tmpCol];
+        positions.add(`${guardPos[0]}-${guardPos[1]}1]}`);
         matrix[tmpRow][tmpCol] = 'X'; // for debug
     }
 }
 
-// Total positions
-let count = 0;
-matrix.forEach(row => {
-    row.forEach(ele => {
-        if (ele === 'X') {
-            count++;
-        }
-    });
-});
-console.log(count);
+console.log(positions.size);
