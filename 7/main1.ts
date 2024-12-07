@@ -3,11 +3,8 @@ const input = Deno.readTextFileSync("input.txt").trim();
 
 let total = 0;
 const hasPermutation = (params1: number[], result1: number): boolean => {
-    if (params1.length <= 2) {
-        const min = params1.reduce((r, v) => r + v, 0);
-        const max = params1.reduce((r, v) => r * v, 1);
-
-        return (result1 === min || result1 === max);
+    if (params1.length === 1) {
+        return result1 === params1[0];
     }
 
     return ((hasPermutation([params1[0] + params1[1], ...params1.slice(2)], result1)) ||
