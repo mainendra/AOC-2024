@@ -9,7 +9,7 @@ const hasPermutation = (params1: number[], result1: number): boolean => {
 
     return ((hasPermutation([params1[0] + params1[1], ...params1.slice(2)], result1)) ||
         (hasPermutation([params1[0] * params1[1], ...params1.slice(2)], result1)) ||
-        (hasPermutation([parseInt(`${params1[0]}${params1[1]}`), ...params1.slice(2)], result1)));
+        (hasPermutation([+(`${params1[0]}${params1[1]}`), ...params1.slice(2)], result1)));
 };
 input.split('\n').forEach(line => {
     const splitVal = line.trim().split(':').map(v => v.trim());
